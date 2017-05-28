@@ -1,4 +1,4 @@
-# batochecka
+# batocheka
 
 Checks if a new version of [batocera.linux](https://batocera-linux.xorhub.com/) is available for the Odroid XU4 platform and sends an email notification accordingly.
 
