@@ -1,6 +1,6 @@
 # batocheka
 
-Checks if a new version of [batocera.linux](https://batocera-linux.xorhub.com/) is available for the Odroid XU4 platform and sends an email notification accordingly.
+Checks if a new version of [batocera.linux](https://batocera-linux.xorhub.com/) is available for any platform and sends an email notification accordingly.
 
 Usage: Use it via crontab with curl to check for new versions periodically.
 
