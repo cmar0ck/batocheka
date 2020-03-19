@@ -6,12 +6,13 @@
 
 // Pre-Check: Save version to file if file doesn't exist, yet	
 if (!file_exists('batocera_old.txt')) {
-	$batocera_old = file_get_contents('https://batocera-linux.xorhub.com/upgrades/odroidxu4/stable/last/recalbox.version');
+	$batocera_old = file_get_contents('https://batocera.org/upgrades/installs.txt');
 	file_put_contents('batocera_old.txt', $batocera_old);
+	sleep(1);
 } 
 
 // Compare versions
-$batocera_new = file_get_contents('https://batocera-linux.xorhub.com/upgrades/odroidxu4/stable/last/recalbox.version');
+$batocera_new = file_get_contents('https://batocera.org/upgrades/installs.txt');
 
 $batocera_old = file_get_contents('batocera_old.txt');
 
@@ -19,7 +20,7 @@ $batocera_old = file_get_contents('batocera_old.txt');
 if ($batocera_old != $batocera_new) {
 
 	$receiver	= 'YOUREMAILADDRESSHERE';
-	$subject 	= 'New Batocera version available!';
+	$subject 	= 'New Batocera version(s) available!';
 	$message 	= $batocera_new;
 	$headers 	= 'From: ' . $receiver . "\r\n" .
 	    		'Reply-To: ' . $receiver . "\r\n" .
@@ -30,7 +31,7 @@ if ($batocera_old != $batocera_new) {
 	echo $subject;
 } 
 else {
-	echo 'No new version available (current version still '.$batocera_old.')';
+	echo 'No new version(s) available (current version still '.$batocera_old.')';
 }
 
 // Update temp file
